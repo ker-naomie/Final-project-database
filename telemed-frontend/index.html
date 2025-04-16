@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeleMed - Your Virtual Healthcare Solution</title>
+    <style>
+        /* Existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #007BFF;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 48px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin-right: 30px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        nav ul li a.active {
+            color: #FF6600;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #FF6600;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: url('images/telemed-bg.jpg') no-repeat center center/cover;
+            position: relative;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        #hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        #hero h2, #hero p, .btn-primary {
+            position: relative;
+            z-index: 2;
+        }
+
+        #hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #FFCC00;
+        }
+        #hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: #FFCC00;
+        }
+        .btn-primary {
+            padding: 10px 20px;
+            background: #FF6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover {
+            background: #ff8533;
+        }
+
+        /* Features Section */
+        #features {
+            padding: 60px 20px;
+            background: white;
+            text-align: center;
+        }
+        #features h2 {
+            margin-bottom: 40px;
+            font-size: 36px;
+            color: #007BFF;
+        }
+        .feature-item {
+            margin: 20px;
+            display: inline-block;
+            width: 30%;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .feature-item h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #FF6600;
+        }
+        .feature-item p {
+            color: #666;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            padding: 60px 20px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        #testimonials h2 {
+            margin-bottom: 40px;
+            font-size: 36px;
+            color: #007BFF;
+        }
+        .testimonial {
+            display: inline-block;
+            width: 30%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+        .testimonial p {
+            color: #555;
+            font-style: italic;
+        }
+        .testimonial h4 {
+            margin-top: 10px;
+            color: #FF6600;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 18px;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media(max-width: 768px) {
+            .feature-item, .testimonial {
+                width: 100%;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to TeleMed</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active" id="homeLink">Home</a></li>
+                <li><a href="#" id="loginLink">Login</a></li>
+                <li><a href="#" id="registerLink">Register</a></li>
+                <li><a href="#">Health Centers</a></li>
+                <li><a href="#" id="consultationsLink">Consultations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Your Health, Our Priority</h2>
+        <p>Connect with healthcare providers, book appointments, and consult with doctors from anywhere.</p>
+        <button class="btn-primary" id="getStartedBtn">Get Started</button>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Why Choose TeleMed?</h2>
+        <div class="feature-item">
+            <h3>Virtual Consultations</h3>
+            <p>Schedule secure online consultations with healthcare professionals from the comfort of your home.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Find Nearby Health Centers</h3>
+            <p>Use our location-based services to find the nearest health centers for in-person visits.</p>
+        </div>
+        <div class="feature-item">
+            <h3>24/7 Appointment Booking</h3>
+            <p>Book appointments with available doctors anytime through our easy-to-use scheduling system.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"TeleMed saved me time and stress. I booked an appointment and consulted with my doctor within minutes!"</p>
+            <h4>- Jane Doe</h4>
+        </div>
+        <div class="testimonial">
+            <p>"The virtual consultation feature is amazing! I didn't have to leave home for quality medical advice."</p>
+            <h4>- John Smith</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Finding the nearest clinic was so easy. I highly recommend TeleMed for its convenience and reliability."</p>
+            <h4>- Sarah Jones</h4>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 TeleMed. All rights reserved.</p>
+    </footer>
+
+  <!-- Add JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const registerLink = document.getElementById('registerLink');
+        const loginLink = document.getElementById('loginLink');
+        const consultationsLink = document.getElementById('consultationsLink');
+        const getStartedBtn = document.getElementById('getStartedBtn');
+        const patientForm = document.getElementById('patientform');
+        const doctorForm = document.getElementById('doctorform');
+
+        // Redirect to register.html on clicking "Register" link
+        registerLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'register.html';
+        });
+
+        // Redirect to login.html on clicking "Login" link
+        loginLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'login.html';
+        });
+
+        // Redirect to consultations.html on clicking "Consultations" link
+        consultationsLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'consultations.html';
+        });
+
+        // Redirect to register.html on clicking "Get Started" button
+        getStartedBtn.addEventListener('click', function () {
+            window.location.href = 'register.html';
+        });
+
+        // Handle patient registration form submission
+        if (patientForm) {
+            patientForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const formData = new FormData(patientForm);
+                const data = {
+                    full_name: formData.get('full_name'),
+                    email: formData.get('email'),
+                    password: formData.get('password'),
+                    role: 'patient',
+                    gender: formData.get('gender'),
+                    age: formData.get('age'),
+                    location: formData.get('location')
+                };
+
+                const response = await fetch('http://localhost:3000/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                console.log(result);
+                if (response.ok) {
+                    alert('Registration successful! Redirecting to login...');
+                    window.location.href = 'login.html'; // Redirect after successful registration
+                } else {
+                    alert(`Registration failed: ${result.message}`);
+                }
+            });
+        }
+
+        // Handle doctor registration form submission
+        if (doctorForm) {
+            doctorForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const formData = new FormData(doctorForm);
+                const data = {
+                    full_name: formData.get('full_name'),
+                    email: formData.get('email'),
+                    password: formData.get('password'),
+                    role: 'doctor',
+                    specialization: formData.get('specialization'),
+                    license_number: formData.get('license_number'),
+                    location: formData.get('location'),
+                    phone_number: formData.get('phone_number'),
+                    years_of_experience: formData.get('years_of_experience')
+                };
+
+                const response = await fetch('http://localhost:3000/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                console.log(result);
+                if (response.ok) {
+                    alert('Registration successful! Redirecting to login...');
+                    window.location.href = 'login.html'; // Redirect after successful registration
+                } else {
+                    alert(`Registration failed: ${result.message}`);
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

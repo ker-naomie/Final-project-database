@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - TeleMed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav ul li a:hover {
+            color: #FF6600;
+        }
+        main {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #007BFF;
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #FF6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #ff8533;
+        }
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Register for TeleMed</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="#">Health Centers</a></li>
+                <li><a href="#">Consultations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Create Your Account</h2>
+        
+        <label for="userType">Select your role:</label>
+        <select id="userType" onchange="toggleForm()">
+            <option value="patient">Patient</option>
+            <option value="doctor">Doctor</option>
+        </select>
+
+        <section id="patientForm" class="form-section active">
+            <form id="patientRegistration">
+                <h3>Patient Registration</h3>
+                <label for="patientName">Full Name:</label>
+                <input type="text" id="patientName" placeholder="Enter your full name" required>
+                
+                <label for="patientEmail">Email:</label>
+                <input type="email" id="patientEmail" placeholder="Enter your email" required>
+                
+                <label for="patientPhone">Phone Number:</label>
+                <input type="tel" id="patientPhone" placeholder="Enter your phone number" required>
+                
+                <label for="patientAge">Age:</label>
+                <input type="number" id="patientAge" placeholder="Enter your age" required>
+
+                <label for="patientGender">Gender:</label>
+                <select id="patientGender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="patientLocation">Location:</label>
+                <input type="text" id="patientLocation" placeholder="Enter your location" required>
+
+                <label for="patientPassword">Password:</label>
+                <input type="password" id="patientPassword" placeholder="Create a password" required>
+
+                <button type="submit">Register as Patient</button>
+
+                <p>Already have an account? <a href="login.html" id="alreadyHaveAccountLink">Login here</a></p>
+            </form>
+        </section>
+
+        <section id="doctorForm" class="form-section">
+            <form id="doctorRegistration">
+                <h3>Doctor Registration</h3>
+                <label for="doctorName">Full Name:</label>
+                <input type="text" id="doctorName" placeholder="Enter your full name" required>
+                
+                <label for="doctorEmail">Email:</label>
+                <input type="email" id="doctorEmail" placeholder="Enter your email" required>
+                
+                <label for="doctorPhone">Phone Number:</label>
+                <input type="tel" id="doctorPhone" placeholder="Enter your phone number" required>
+                
+                <label for="doctorSpecialization">Specialization:</label>
+                <input type="text" id="doctorSpecialization" placeholder="Enter your specialization" required>
+
+                <label for="doctorLicense">License Number:</label>
+                <input type="text" id="doctorLicense" placeholder="Enter your medical license number" required>
+
+                <label for="doctorLocation">Location:</label>
+                <input type="text" id="doctorLocation" placeholder="Enter your location" required>
+
+                <label for="doctorExperience">Years of Experience:</label>
+                <input type="number" id="doctorExperience" placeholder="Enter your years of experience" required>
+
+                <label for="doctorPassword">Password:</label>
+                <input type="password" id="doctorPassword" placeholder="Create a password" required>
+
+                <button type="submit">Register as Doctor</button>
+
+                <p>Already have an account? <a href="login.html" id="alreadyHaveAccountLink">Login here</a></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TeleMed. All rights reserved.</p>
+    </footer>
+
+    <script src="register.js"></script>
+</body>
+</html>
